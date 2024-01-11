@@ -5,6 +5,7 @@ final class AppCoordinator: BaseCoordinator {
     override func start() {
         if let user = Auth.auth().currentUser, user.isEmailVerified {
             print("Show main screen")
+            logout()
         } else {
             runModule()
         }
@@ -28,8 +29,8 @@ extension AppCoordinator {
     private func makeModule() -> BaseViewControllerProtocol {
         let useCase = AuthUseCase(apiService: FirebaseClient.shared)
         let store = AuthStore(useCase: useCase)
-        let model = AuthViewController.Model(close: {
-            print("Yes")
+        let model = AuthViewController.Model(close: { [weak self] in
+            self?.start()
         })
         let controller = AuthViewController(store: store, model: model)
         return controller

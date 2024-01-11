@@ -4,11 +4,13 @@ enum AuthEvent {
     case registered
     case emailVerified
     case notVerified
+    case linkSended
 }
 
 enum AuthAction {
     case createUser(String, String)
-    case login(String, String)
+    case signIn(String, String)
+    case sendPasswordReset(String)
     case signOut
 }
 
@@ -28,13 +30,18 @@ final class AuthStore: Store<AuthEvent, AuthAction> {
                     password: password
                 )
             }
-        case .login(let email, let password):
+        case .signIn(let email, let password):
             statefulCall { [weak self] in
                 try await self?.login(
                     withEmail: email,
                     password: password
                 )
             }
+        case .sendPasswordReset(let email):
+            statefulCall { [weak self] in
+                try await self?.sendPasswordReset(withEmail: email)
+            }
+
         case .signOut: signOut()
         }
     }
@@ -45,8 +52,13 @@ final class AuthStore: Store<AuthEvent, AuthAction> {
     }
 
     private func login(withEmail email: String, password: String) async throws {
-        let response = try await useCase.login(withEmail: email, password: password)
+        let response = try await useCase.signIn(withEmail: email, password: password)
         try checkResponse(response)
+    }
+
+    private func sendPasswordReset(withEmail email: String) async throws {
+        try await useCase.sendPasswordReset(withEmail: email)
+        sendEvent(.linkSended)
     }
 
     private func emailVerification() throws {
@@ -70,4 +82,6 @@ final class AuthStore: Store<AuthEvent, AuthAction> {
             print(error.localizedDescription)
         }
     }
+
+
 }

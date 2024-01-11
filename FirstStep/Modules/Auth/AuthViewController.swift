@@ -95,7 +95,12 @@ extension AuthViewController {
         guard let email = emailTextField.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty
         else { return }
-        isLogin ? store.sendAction(.login(email, password)) : store.sendAction(.createUser(email, password))
+        isLogin ? store.sendAction(.signIn(email, password)) : store.sendAction(.createUser(email, password))
+    }
+
+    @objc private func forgotButtonTapped() {
+        guard let email = emailTextField.text else { return }
+        store.sendAction(.sendPasswordReset(email))
     }
 }
 // MARK: - Setup Veiws
@@ -106,6 +111,7 @@ extension AuthViewController {
         view.addSubview(rootStackView)
         view.addSubview(authStatusSwitch)
         authStatusSwitch.configure(self, action: #selector(authSwitchTapped))
+        forgotButton.addTarget(self, action: #selector(forgotButtonTapped), for: .primaryActionTriggered)
         actionButton.addTarget(
             self,
             action: #selector(actionButtonTapped),
@@ -129,10 +135,13 @@ extension AuthViewController {
                 switch event {
                 case .registered:
                     print("Создали учетную запись, проверьте почту")
+                    self.isLogin = true
                 case .emailVerified:
-                    print("проверено")
+                    self.model.close?()
                 case .notVerified:
                     print("не проверено")
+                case .linkSended:
+                    print("проверьте почту")
                 }
             }.store(in: &bag)
     }
