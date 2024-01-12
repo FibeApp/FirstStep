@@ -137,6 +137,7 @@ extension AuthViewController {
                     print("Создали учетную запись, проверьте почту")
                     self.isLogin = true
                 case .emailVerified:
+                    ProgressHUD.succeed("Емейл проверенный")
                     self.model.close?()
                 case .notVerified:
                     print("не проверено")

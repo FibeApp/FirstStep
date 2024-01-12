@@ -33,6 +33,34 @@
 		026DBC2F2B4E9F09008EE1A5 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 026DBC2E2B4E9F09008EE1A5 /* SnapKit-Dynamic */; };
 		026DBC312B4EA855008EE1A5 /* AuthStatusSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DBC302B4EA855008EE1A5 /* AuthStatusSwitch.swift */; };
 		026DBC332B4EA89B008EE1A5 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DBC322B4EA89B008EE1A5 /* BaseView.swift */; };
+		02AB085F2B50C72300255CAA /* ProgressHUD+CircleArcDotSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08442B50C72300255CAA /* ProgressHUD+CircleArcDotSpin.swift */; };
+		02AB08602B50C72300255CAA /* ProgressHUD+HorizontalBarScaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08452B50C72300255CAA /* ProgressHUD+HorizontalBarScaling.swift */; };
+		02AB08612B50C72300255CAA /* ProgressHUD+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08462B50C72300255CAA /* ProgressHUD+ActivityIndicator.swift */; };
+		02AB08622B50C72300255CAA /* ProgressHUD+CircleRotateChase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08472B50C72300255CAA /* ProgressHUD+CircleRotateChase.swift */; };
+		02AB08632B50C72300255CAA /* ProgressHUD+BarSweepToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08482B50C72300255CAA /* ProgressHUD+BarSweepToggle.swift */; };
+		02AB08642B50C72300255CAA /* ProgressHUD+HorizontalDotScaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08492B50C72300255CAA /* ProgressHUD+HorizontalDotScaling.swift */; };
+		02AB08652B50C72300255CAA /* ProgressHUD+DualDotSidestep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB084A2B50C72300255CAA /* ProgressHUD+DualDotSidestep.swift */; };
+		02AB08662B50C72300255CAA /* ProgressHUD+CircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB084B2B50C72300255CAA /* ProgressHUD+CircleStrokeSpin.swift */; };
+		02AB08672B50C72300255CAA /* ProgressHUD+CircleBarSpinFade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB084C2B50C72300255CAA /* ProgressHUD+CircleBarSpinFade.swift */; };
+		02AB08682B50C72300255CAA /* ProgressHUD+CircleRippleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB084D2B50C72300255CAA /* ProgressHUD+CircleRippleMultiple.swift */; };
+		02AB08692B50C72300255CAA /* ProgressHUD+TriangleDotShift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB084E2B50C72300255CAA /* ProgressHUD+TriangleDotShift.swift */; };
+		02AB086A2B50C72300255CAA /* ProgressHUD+BallVerticalBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB084F2B50C72300255CAA /* ProgressHUD+BallVerticalBounce.swift */; };
+		02AB086B2B50C72300255CAA /* ProgressHUD+CircleRippleSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08502B50C72300255CAA /* ProgressHUD+CircleRippleSingle.swift */; };
+		02AB086C2B50C72300255CAA /* ProgressHUD+PacmanProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08512B50C72300255CAA /* ProgressHUD+PacmanProgress.swift */; };
+		02AB086D2B50C72300255CAA /* ProgressHUD+SemiRingRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08522B50C72300255CAA /* ProgressHUD+SemiRingRotation.swift */; };
+		02AB086E2B50C72300255CAA /* ProgressHUD+CircleDotSpinFade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08532B50C72300255CAA /* ProgressHUD+CircleDotSpinFade.swift */; };
+		02AB086F2B50C72300255CAA /* ProgressHUD+QuintupleDotDance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08542B50C72300255CAA /* ProgressHUD+QuintupleDotDance.swift */; };
+		02AB08702B50C72300255CAA /* ProgressHUD+CirclePulseSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08552B50C72300255CAA /* ProgressHUD+CirclePulseSingle.swift */; };
+		02AB08712B50C72300255CAA /* ProgressHUD+SquareCircuitSnake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08562B50C72300255CAA /* ProgressHUD+SquareCircuitSnake.swift */; };
+		02AB08722B50C72300255CAA /* ProgressHUD+CirclePulseMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08572B50C72300255CAA /* ProgressHUD+CirclePulseMultiple.swift */; };
+		02AB08732B50C72300255CAA /* ProgressHUD+SFSymbolBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08582B50C72300255CAA /* ProgressHUD+SFSymbolBounce.swift */; };
+		02AB08742B50C72300255CAA /* ProgressHUD+LiveIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB08592B50C72300255CAA /* ProgressHUD+LiveIcon.swift */; };
+		02AB08752B50C72300255CAA /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB085A2B50C72300255CAA /* ProgressView.swift */; };
+		02AB08762B50C72300255CAA /* ProgressHUD+Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB085B2B50C72300255CAA /* ProgressHUD+Banner.swift */; };
+		02AB08772B50C72300255CAA /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB085C2B50C72300255CAA /* ProgressHUD.swift */; };
+		02AB08782B50C72300255CAA /* ProgressHUD+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB085D2B50C72300255CAA /* ProgressHUD+Public.swift */; };
+		02AB08792B50C72300255CAA /* ProgressHUD+Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB085E2B50C72300255CAA /* ProgressHUD+Enums.swift */; };
+		02AB087D2B50C86600255CAA /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB087C2B50C86600255CAA /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +87,34 @@
 		026DBC292B4E9A35008EE1A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		026DBC302B4EA855008EE1A5 /* AuthStatusSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStatusSwitch.swift; sourceTree = "<group>"; };
 		026DBC322B4EA89B008EE1A5 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		02AB08442B50C72300255CAA /* ProgressHUD+CircleArcDotSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+CircleArcDotSpin.swift"; sourceTree = "<group>"; };
+		02AB08452B50C72300255CAA /* ProgressHUD+HorizontalBarScaling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+HorizontalBarScaling.swift"; sourceTree = "<group>"; };
+		02AB08462B50C72300255CAA /* ProgressHUD+ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+ActivityIndicator.swift"; sourceTree = "<group>"; };
+		02AB08472B50C72300255CAA /* ProgressHUD+CircleRotateChase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+CircleRotateChase.swift"; sourceTree = "<group>"; };
+		02AB08482B50C72300255CAA /* ProgressHUD+BarSweepToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+BarSweepToggle.swift"; sourceTree = "<group>"; };
+		02AB08492B50C72300255CAA /* ProgressHUD+HorizontalDotScaling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+HorizontalDotScaling.swift"; sourceTree = "<group>"; };
+		02AB084A2B50C72300255CAA /* ProgressHUD+DualDotSidestep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+DualDotSidestep.swift"; sourceTree = "<group>"; };
+		02AB084B2B50C72300255CAA /* ProgressHUD+CircleStrokeSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+CircleStrokeSpin.swift"; sourceTree = "<group>"; };
+		02AB084C2B50C72300255CAA /* ProgressHUD+CircleBarSpinFade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+CircleBarSpinFade.swift"; sourceTree = "<group>"; };
+		02AB084D2B50C72300255CAA /* ProgressHUD+CircleRippleMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+CircleRippleMultiple.swift"; sourceTree = "<group>"; };
+		02AB084E2B50C72300255CAA /* ProgressHUD+TriangleDotShift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+TriangleDotShift.swift"; sourceTree = "<group>"; };
+		02AB084F2B50C72300255CAA /* ProgressHUD+BallVerticalBounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+BallVerticalBounce.swift"; sourceTree = "<group>"; };
+		02AB08502B50C72300255CAA /* ProgressHUD+CircleRippleSingle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+CircleRippleSingle.swift"; sourceTree = "<group>"; };
+		02AB08512B50C72300255CAA /* ProgressHUD+PacmanProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+PacmanProgress.swift"; sourceTree = "<group>"; };
+		02AB08522B50C72300255CAA /* ProgressHUD+SemiRingRotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+SemiRingRotation.swift"; sourceTree = "<group>"; };
+		02AB08532B50C72300255CAA /* ProgressHUD+CircleDotSpinFade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+CircleDotSpinFade.swift"; sourceTree = "<group>"; };
+		02AB08542B50C72300255CAA /* ProgressHUD+QuintupleDotDance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+QuintupleDotDance.swift"; sourceTree = "<group>"; };
+		02AB08552B50C72300255CAA /* ProgressHUD+CirclePulseSingle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+CirclePulseSingle.swift"; sourceTree = "<group>"; };
+		02AB08562B50C72300255CAA /* ProgressHUD+SquareCircuitSnake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+SquareCircuitSnake.swift"; sourceTree = "<group>"; };
+		02AB08572B50C72300255CAA /* ProgressHUD+CirclePulseMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+CirclePulseMultiple.swift"; sourceTree = "<group>"; };
+		02AB08582B50C72300255CAA /* ProgressHUD+SFSymbolBounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+SFSymbolBounce.swift"; sourceTree = "<group>"; };
+		02AB08592B50C72300255CAA /* ProgressHUD+LiveIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+LiveIcon.swift"; sourceTree = "<group>"; };
+		02AB085A2B50C72300255CAA /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		02AB085B2B50C72300255CAA /* ProgressHUD+Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+Banner.swift"; sourceTree = "<group>"; };
+		02AB085C2B50C72300255CAA /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		02AB085D2B50C72300255CAA /* ProgressHUD+Public.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+Public.swift"; sourceTree = "<group>"; };
+		02AB085E2B50C72300255CAA /* ProgressHUD+Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+Enums.swift"; sourceTree = "<group>"; };
+		02AB087C2B50C86600255CAA /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,13 +197,14 @@
 		026DBC102B4E75F3008EE1A5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				02AB087A2B50C73600255CAA /* ProgressHUD */,
 				026DBC012B4E651D008EE1A5 /* BaseViewControllerProtocol.swift */,
 				026DBC032B4E657E008EE1A5 /* BaseViewController.swift */,
 				026DBC092B4E73BD008EE1A5 /* BaseCoordinator.swift */,
 				026DBC322B4EA89B008EE1A5 /* BaseView.swift */,
 				026DBC052B4E679C008EE1A5 /* Router.swift */,
 				026DBC112B4E8093008EE1A5 /* Store.swift */,
-				026DBC072B4E72D9008EE1A5 /* UINavigationController+Extension.swift */,
+				02AB087B2B50C83D00255CAA /* Extensions */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -185,6 +242,57 @@
 				026DBC222B4E8659008EE1A5 /* Person.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		02AB08432B50C72300255CAA /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				02AB08442B50C72300255CAA /* ProgressHUD+CircleArcDotSpin.swift */,
+				02AB08452B50C72300255CAA /* ProgressHUD+HorizontalBarScaling.swift */,
+				02AB08462B50C72300255CAA /* ProgressHUD+ActivityIndicator.swift */,
+				02AB08472B50C72300255CAA /* ProgressHUD+CircleRotateChase.swift */,
+				02AB08482B50C72300255CAA /* ProgressHUD+BarSweepToggle.swift */,
+				02AB08492B50C72300255CAA /* ProgressHUD+HorizontalDotScaling.swift */,
+				02AB084A2B50C72300255CAA /* ProgressHUD+DualDotSidestep.swift */,
+				02AB084B2B50C72300255CAA /* ProgressHUD+CircleStrokeSpin.swift */,
+				02AB084C2B50C72300255CAA /* ProgressHUD+CircleBarSpinFade.swift */,
+				02AB084D2B50C72300255CAA /* ProgressHUD+CircleRippleMultiple.swift */,
+				02AB084E2B50C72300255CAA /* ProgressHUD+TriangleDotShift.swift */,
+				02AB084F2B50C72300255CAA /* ProgressHUD+BallVerticalBounce.swift */,
+				02AB08502B50C72300255CAA /* ProgressHUD+CircleRippleSingle.swift */,
+				02AB08512B50C72300255CAA /* ProgressHUD+PacmanProgress.swift */,
+				02AB08522B50C72300255CAA /* ProgressHUD+SemiRingRotation.swift */,
+				02AB08532B50C72300255CAA /* ProgressHUD+CircleDotSpinFade.swift */,
+				02AB08542B50C72300255CAA /* ProgressHUD+QuintupleDotDance.swift */,
+				02AB08552B50C72300255CAA /* ProgressHUD+CirclePulseSingle.swift */,
+				02AB08562B50C72300255CAA /* ProgressHUD+SquareCircuitSnake.swift */,
+				02AB08572B50C72300255CAA /* ProgressHUD+CirclePulseMultiple.swift */,
+				02AB08582B50C72300255CAA /* ProgressHUD+SFSymbolBounce.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		02AB087A2B50C73600255CAA /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				02AB08432B50C72300255CAA /* Animations */,
+				02AB085C2B50C72300255CAA /* ProgressHUD.swift */,
+				02AB085B2B50C72300255CAA /* ProgressHUD+Banner.swift */,
+				02AB085E2B50C72300255CAA /* ProgressHUD+Enums.swift */,
+				02AB08592B50C72300255CAA /* ProgressHUD+LiveIcon.swift */,
+				02AB085D2B50C72300255CAA /* ProgressHUD+Public.swift */,
+				02AB085A2B50C72300255CAA /* ProgressView.swift */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		02AB087B2B50C83D00255CAA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				026DBC072B4E72D9008EE1A5 /* UINavigationController+Extension.swift */,
+				02AB087C2B50C86600255CAA /* UIApplication+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		02BF96432B4FA28E002647E0 /* Views */ = {
@@ -278,23 +386,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02AB08602B50C72300255CAA /* ProgressHUD+HorizontalBarScaling.swift in Sources */,
+				02AB08652B50C72300255CAA /* ProgressHUD+DualDotSidestep.swift in Sources */,
 				026DBC042B4E657E008EE1A5 /* BaseViewController.swift in Sources */,
 				026DBBE42B4E48AB008EE1A5 /* AuthViewController.swift in Sources */,
+				02AB086B2B50C72300255CAA /* ProgressHUD+CircleRippleSingle.swift in Sources */,
 				026DBBE02B4E48AB008EE1A5 /* AppDelegate.swift in Sources */,
+				02AB08762B50C72300255CAA /* ProgressHUD+Banner.swift in Sources */,
 				026DBC332B4EA89B008EE1A5 /* BaseView.swift in Sources */,
 				026DBC172B4E82CF008EE1A5 /* AuthService.swift in Sources */,
+				02AB08642B50C72300255CAA /* ProgressHUD+HorizontalDotScaling.swift in Sources */,
+				02AB086E2B50C72300255CAA /* ProgressHUD+CircleDotSpinFade.swift in Sources */,
+				02AB08792B50C72300255CAA /* ProgressHUD+Enums.swift in Sources */,
 				026DBC022B4E651D008EE1A5 /* BaseViewControllerProtocol.swift in Sources */,
+				02AB087D2B50C86600255CAA /* UIApplication+Extension.swift in Sources */,
+				02AB08682B50C72300255CAA /* ProgressHUD+CircleRippleMultiple.swift in Sources */,
 				026DBC082B4E72D9008EE1A5 /* UINavigationController+Extension.swift in Sources */,
+				02AB08622B50C72300255CAA /* ProgressHUD+CircleRotateChase.swift in Sources */,
+				02AB085F2B50C72300255CAA /* ProgressHUD+CircleArcDotSpin.swift in Sources */,
+				02AB08692B50C72300255CAA /* ProgressHUD+TriangleDotShift.swift in Sources */,
+				02AB086C2B50C72300255CAA /* ProgressHUD+PacmanProgress.swift in Sources */,
 				026DBC122B4E8093008EE1A5 /* Store.swift in Sources */,
+				02AB08702B50C72300255CAA /* ProgressHUD+CirclePulseSingle.swift in Sources */,
+				02AB08772B50C72300255CAA /* ProgressHUD.swift in Sources */,
+				02AB086F2B50C72300255CAA /* ProgressHUD+QuintupleDotDance.swift in Sources */,
 				026DBC282B4E88D6008EE1A5 /* AuthStore.swift in Sources */,
+				02AB08722B50C72300255CAA /* ProgressHUD+CirclePulseMultiple.swift in Sources */,
+				02AB08672B50C72300255CAA /* ProgressHUD+CircleBarSpinFade.swift in Sources */,
+				02AB08712B50C72300255CAA /* ProgressHUD+SquareCircuitSnake.swift in Sources */,
 				026DBC062B4E679C008EE1A5 /* Router.swift in Sources */,
+				02AB086A2B50C72300255CAA /* ProgressHUD+BallVerticalBounce.swift in Sources */,
 				026DBC312B4EA855008EE1A5 /* AuthStatusSwitch.swift in Sources */,
 				026DBC152B4E8279008EE1A5 /* FirebaseClient.swift in Sources */,
 				026DBC262B4E8797008EE1A5 /* AuthUseCase.swift in Sources */,
 				026DBC0C2B4E7446008EE1A5 /* AppCoordinator.swift in Sources */,
+				02AB08782B50C72300255CAA /* ProgressHUD+Public.swift in Sources */,
+				02AB08732B50C72300255CAA /* ProgressHUD+SFSymbolBounce.swift in Sources */,
 				026DBC232B4E8659008EE1A5 /* Person.swift in Sources */,
+				02AB08742B50C72300255CAA /* ProgressHUD+LiveIcon.swift in Sources */,
+				02AB08612B50C72300255CAA /* ProgressHUD+ActivityIndicator.swift in Sources */,
 				026DBBE22B4E48AB008EE1A5 /* SceneDelegate.swift in Sources */,
+				02AB086D2B50C72300255CAA /* ProgressHUD+SemiRingRotation.swift in Sources */,
+				02AB08632B50C72300255CAA /* ProgressHUD+BarSweepToggle.swift in Sources */,
+				02AB08752B50C72300255CAA /* ProgressView.swift in Sources */,
 				026DBC0A2B4E73BD008EE1A5 /* BaseCoordinator.swift in Sources */,
+				02AB08662B50C72300255CAA /* ProgressHUD+CircleStrokeSpin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
