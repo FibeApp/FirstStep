@@ -4,8 +4,7 @@ import FirebaseAuth
 final class AppCoordinator: BaseCoordinator {
     override func start() {
         if let user = Auth.auth().currentUser, user.isEmailVerified {
-            print("Show main screen")
-            logout()
+            runMainModule()
         } else {
             runModule()
         }
@@ -17,6 +16,13 @@ final class AppCoordinator: BaseCoordinator {
         } catch {
             print(error.localizedDescription)
         }
+    }
+
+    private func runMainModule() {
+        let controller = makeMainModule()
+        controller.view.backgroundColor = .systemGreen
+        logout()
+        router.setRootModule(controller)
     }
 
     private func runModule() {
@@ -33,6 +39,11 @@ extension AppCoordinator {
             self?.start()
         })
         let controller = AuthViewController(store: store, model: model)
+        return controller
+    }
+
+    private func makeMainModule() -> BaseViewControllerProtocol {
+        let controller = BaseViewController()
         return controller
     }
 }
