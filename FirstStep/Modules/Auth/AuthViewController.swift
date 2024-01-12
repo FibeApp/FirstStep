@@ -4,6 +4,8 @@ import SnapKit
 class AuthViewController: BaseViewController {
     private var store: AuthStore
     private var isLogin = true { didSet { updateUI() }}
+    private var show = true { didSet { updateEyes() }}
+
     struct Model {
         let close: Callback?
     }
@@ -21,28 +23,9 @@ class AuthViewController: BaseViewController {
         return $0
     }(UILabel())
 
-    private let emailTextField: UITextField = {
-        $0.placeholder = "Email"
-        $0.borderStyle = .roundedRect
-        return $0
-    }(UITextField())
-
-    private let passwordTextField: UITextField = {
-        $0.placeholder = "Password"
-        $0.isSecureTextEntry = true
-        $0.borderStyle = .roundedRect
-        return $0
-    }(UITextField())
-
-    private let repeatTextField: UITextField = {
-        $0.placeholder = "Repeat Password"
-        $0.isSecureTextEntry = true
-        $0.borderStyle = .roundedRect
-        $0.isHidden = true
-        $0.isEnabled = false
-        $0.alpha = 0
-        return $0
-    }(UITextField())
+    private let emailTextField = AuthTextField(placeholder: "Email")
+    private let passwordTextField = AuthTextField(placeholder: "Password", isSecureTextEntry: true)
+    private let repeatTextField = AuthTextField(placeholder: "Repeat Password", isSecureTextEntry: true)
 
     private let forgotButton: UIButton = {
         $0.contentHorizontalAlignment = .leading
@@ -92,15 +75,23 @@ extension AuthViewController {
     }
 
     @objc private func actionButtonTapped() {
-        guard let email = emailTextField.text, !email.isEmpty,
-              let password = passwordTextField.text, !password.isEmpty
-        else { return }
+        let email = emailTextField.text
+        let password = passwordTextField.text
         isLogin ? store.sendAction(.signIn(email, password)) : store.sendAction(.createUser(email, password))
     }
 
     @objc private func forgotButtonTapped() {
-        guard let email = emailTextField.text else { return }
+        let email = emailTextField.text
         store.sendAction(.sendPasswordReset(email))
+    }
+
+    @objc private func showChanged() {
+        show.toggle()
+    }
+
+    private func updateEyes() {
+        passwordTextField.configure(with: show)
+        repeatTextField.configure(with: show)
     }
 }
 // MARK: - Setup Veiws
@@ -112,6 +103,9 @@ extension AuthViewController {
         view.addSubview(authStatusSwitch)
         authStatusSwitch.configure(self, action: #selector(authSwitchTapped))
         forgotButton.addTarget(self, action: #selector(forgotButtonTapped), for: .primaryActionTriggered)
+        passwordTextField.configure(target: self, action: #selector(showChanged))
+        repeatTextField.configure(target: self, action: #selector(showChanged))
+        repeatTextField.isHidden = true
         actionButton.addTarget(
             self,
             action: #selector(actionButtonTapped),
@@ -154,6 +148,8 @@ extension AuthViewController {
         UIView.animate(withDuration: 0.5) {
             self.repeatTextField.isHidden = self.isLogin
             self.repeatTextField.alpha = self.isLogin ? 0 : 1
+            self.middleView.isHidden = !self.isLogin
+            self.middleView.alpha = self.isLogin ? 1 : 0
         }
     }
 

@@ -61,6 +61,7 @@
 		02AB08782B50C72300255CAA /* ProgressHUD+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB085D2B50C72300255CAA /* ProgressHUD+Public.swift */; };
 		02AB08792B50C72300255CAA /* ProgressHUD+Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB085E2B50C72300255CAA /* ProgressHUD+Enums.swift */; };
 		02AB087D2B50C86600255CAA /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB087C2B50C86600255CAA /* UIApplication+Extension.swift */; };
+		02AB087F2B5149A400255CAA /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB087E2B5149A400255CAA /* AuthTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,7 @@
 		02AB085D2B50C72300255CAA /* ProgressHUD+Public.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+Public.swift"; sourceTree = "<group>"; };
 		02AB085E2B50C72300255CAA /* ProgressHUD+Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+Enums.swift"; sourceTree = "<group>"; };
 		02AB087C2B50C86600255CAA /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		02AB087E2B5149A400255CAA /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				026DBC302B4EA855008EE1A5 /* AuthStatusSwitch.swift */,
+				02AB087E2B5149A400255CAA /* AuthTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				026DBC022B4E651D008EE1A5 /* BaseViewControllerProtocol.swift in Sources */,
 				02AB087D2B50C86600255CAA /* UIApplication+Extension.swift in Sources */,
 				02AB08682B50C72300255CAA /* ProgressHUD+CircleRippleMultiple.swift in Sources */,
+				02AB087F2B5149A400255CAA /* AuthTextField.swift in Sources */,
 				026DBC082B4E72D9008EE1A5 /* UINavigationController+Extension.swift in Sources */,
 				02AB08622B50C72300255CAA /* ProgressHUD+CircleRotateChase.swift in Sources */,
 				02AB085F2B50C72300255CAA /* ProgressHUD+CircleArcDotSpin.swift in Sources */,
