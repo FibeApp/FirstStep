@@ -45,9 +45,9 @@ class AuthViewController: BaseViewController {
     private let actionButton: UIButton = {
         var config = UIButton.Configuration.filled()
         config.title = "Login"
-        config.baseBackgroundColor = .systemRed
-        config.baseForegroundColor = .white
-        config.cornerStyle = .capsule
+//        config.baseBackgroundColor = .systemRed
+//        config.baseForegroundColor = .white
+        config.cornerStyle = .medium
         $0.configuration = config
         return $0
     }(UIButton(type: .system))
@@ -75,6 +75,7 @@ extension AuthViewController {
     }
 
     @objc private func actionButtonTapped() {
+        ProgressHUD.animate("Please wait", .activityIndicator, interaction: false)
         let email = emailTextField.text
         let password = passwordTextField.text
         isLogin ? store.sendAction(.signIn(email, password)) : store.sendAction(.createUser(email, password))
@@ -98,9 +99,7 @@ extension AuthViewController {
 extension AuthViewController {
     override func setupViews() {
         super.setupViews()
-        view.addSubview(titleLabel)
-        view.addSubview(rootStackView)
-        view.addSubview(authStatusSwitch)
+        [titleLabel, rootStackView, actionButton, authStatusSwitch].forEach { view.addSubview($0)}
         authStatusSwitch.configure(self, action: #selector(authSwitchTapped))
         forgotButton.addTarget(self, action: #selector(forgotButtonTapped), for: .primaryActionTriggered)
         passwordTextField.configure(target: self, action: #selector(showChanged))
@@ -111,7 +110,7 @@ extension AuthViewController {
             action: #selector(actionButtonTapped),
             for: .primaryActionTriggered
         )
-        [emailTextField, passwordTextField, repeatTextField, middleView, actionButton]
+        [emailTextField, passwordTextField, repeatTextField, middleView]
             .forEach { rootStackView.addArrangedSubview($0)}
         middleView.addSubview(forgotButton)
         middleView.addSubview(resendButton)
@@ -126,13 +125,14 @@ extension AuthViewController {
             .receive(on: DispatchQueue.main)
             .sink {[weak self] event in
                 guard let self else { return }
+                ProgressHUD.dismiss()
                 switch event {
                 case .registered:
                     print("Создали учетную запись, проверьте почту")
                     self.isLogin = true
                 case .emailVerified:
-                    ProgressHUD.succeed("Емейл проверенный")
                     self.model.close?()
+                    print("Yes")
                 case .notVerified:
                     print("не проверено")
                 case .linkSended:
@@ -161,9 +161,16 @@ extension AuthViewController {
             $0.leading.trailing.equalToSuperview().inset(padding)
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(50)
         }
+        
         rootStackView.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
+            $0.top.equalTo(titleLabel.snp.bottom).offset(50)
             $0.leading.trailing.equalToSuperview().inset(padding)
+        }
+
+        actionButton.snp.makeConstraints {
+            $0.top.equalTo(rootStackView.snp.bottom).offset(50)
+            $0.leading.trailing.equalToSuperview().inset(padding)
+            $0.height.equalTo(50)
         }
 
         authStatusSwitch.snp.makeConstraints {

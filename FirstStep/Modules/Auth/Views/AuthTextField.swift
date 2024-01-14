@@ -3,43 +3,7 @@ import UIKit
 final class AuthTextField: BaseView {
     private var placeholder = ""
 
-    init(placeholder: String, isSecureTextEntry: Bool = false) {
-        super.init(frame: .zero)
-        textField.placeholder = placeholder
-        if isSecureTextEntry {
-            textField.rightView = showPasswordButton
-            textField.rightViewMode = .always
-            configure(with: true)
-        } else {
-            textField.isSecureTextEntry = false
-        }
-        self.placeholder = placeholder
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func configure(with isSecureTextEntry: Bool) {
-        textField.isSecureTextEntry = isSecureTextEntry
-        showPasswordButton.setImage(
-            UIImage(systemName: isSecureTextEntry ? "eye" : "eye.slash"),
-            for: []
-        )
-    }
-
-    func configure(target: Any?, action: Selector) {
-        showPasswordButton.addTarget(
-            target,
-            action: action,
-            for: .primaryActionTriggered
-        )
-    }
-
-    private let showPasswordButton: UIButton = {
-        return $0
-    }(UIButton(type: .system))
-
+    private let showPasswordButton = UIButton(type: .system)
 
     private let label: UILabel = {
         $0.font = .systemFont(ofSize: 20)
@@ -72,6 +36,39 @@ final class AuthTextField: BaseView {
 
     func updateSecure(_ isSecureTextEntry: Bool) {
         textField.isSecureTextEntry = isSecureTextEntry
+    }
+
+    init(placeholder: String, isSecureTextEntry: Bool = false) {
+        super.init(frame: .zero)
+        textField.placeholder = placeholder
+        if isSecureTextEntry {
+            textField.rightView = showPasswordButton
+            textField.rightViewMode = .always
+            configure(with: true)
+        } else {
+            textField.isSecureTextEntry = false
+        }
+        self.placeholder = placeholder
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func configure(with isSecureTextEntry: Bool) {
+        textField.isSecureTextEntry = isSecureTextEntry
+        showPasswordButton.setImage(
+            UIImage(systemName: isSecureTextEntry ? "eye" : "eye.slash"),
+            for: []
+        )
+    }
+
+    func configure(target: Any?, action: Selector) {
+        showPasswordButton.addTarget(
+            target,
+            action: action,
+            for: .primaryActionTriggered
+        )
     }
 }
 
