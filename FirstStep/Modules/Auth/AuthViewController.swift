@@ -17,12 +17,6 @@ class AuthViewController: BaseViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
-    private let titleLabel: UILabel = {
-        $0.textAlignment = .center
-        $0.font = .systemFont(ofSize: 35)
-        return $0
-    }(UILabel())
-
     private let emailTextField = AuthTextField(placeholder: "Email")
     private let passwordTextField = AuthTextField(placeholder: "Password", isSecureTextEntry: true)
     private let repeatTextField = AuthTextField(placeholder: "Repeat Password", isSecureTextEntry: true)
@@ -45,8 +39,6 @@ class AuthViewController: BaseViewController {
     private let actionButton: UIButton = {
         var config = UIButton.Configuration.filled()
         config.title = "Login"
-//        config.baseBackgroundColor = .systemRed
-//        config.baseForegroundColor = .white
         config.cornerStyle = .medium
         $0.configuration = config
         return $0
@@ -99,7 +91,7 @@ extension AuthViewController {
 extension AuthViewController {
     override func setupViews() {
         super.setupViews()
-        [titleLabel, rootStackView, actionButton, authStatusSwitch].forEach { view.addSubview($0)}
+        [rootStackView, actionButton, authStatusSwitch].forEach { view.addSubview($0)}
         authStatusSwitch.configure(self, action: #selector(authSwitchTapped))
         forgotButton.addTarget(self, action: #selector(forgotButtonTapped), for: .primaryActionTriggered)
         passwordTextField.configure(target: self, action: #selector(showChanged))
@@ -128,11 +120,10 @@ extension AuthViewController {
                 ProgressHUD.dismiss()
                 switch event {
                 case .registered:
-                    print("Создали учетную запись, проверьте почту")
+                    ProgressHUD.succeed("Создали учетную запись, проверьте почту")
                     self.isLogin = true
                 case .emailVerified:
                     self.model.close?()
-                    print("Yes")
                 case .notVerified:
                     print("не проверено")
                 case .linkSended:
@@ -144,7 +135,7 @@ extension AuthViewController {
     private func updateUI() {
         authStatusSwitch.configure(with: isLogin)
         actionButton.configuration?.title = isLogin ? "Login" : "Register"
-        titleLabel.text = isLogin ? "Login" : "Register"
+        navigationItem.title = isLogin ? "Login" : "Register"
         UIView.animate(withDuration: 0.5) {
             self.repeatTextField.isHidden = self.isLogin
             self.repeatTextField.alpha = self.isLogin ? 0 : 1
@@ -157,13 +148,9 @@ extension AuthViewController {
         super.setupConstraints()
         let padding = 20.0
 
-        titleLabel.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(padding)
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(50)
-        }
         
         rootStackView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(50)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(50)
             $0.leading.trailing.equalToSuperview().inset(padding)
         }
 
