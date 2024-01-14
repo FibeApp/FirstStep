@@ -1,18 +1,9 @@
 import UIKit
 
 final class AuthStatusSwitch: BaseView {
-    private let label: UILabel = {
-        return $0
-    }(UILabel())
-
-    private let button: UIButton = {
-        return $0
-    }(UIButton(type: .system))
-
-    private let stackView: UIStackView = {
-        $0.spacing = 10
-        return $0
-    }(UIStackView())
+    private let label = UILabel()
+    private let button = UIButton(type: .system)
+    private let stackView = UIStackView()
 
     func configure(with isLogin: Bool) {
         label.text = isLogin ? "Don't have an account?" : "Already have an account?"
@@ -27,6 +18,7 @@ final class AuthStatusSwitch: BaseView {
 extension AuthStatusSwitch {
     override func setupViews() {
         addSubview(stackView)
+        stackView.spacing = 10
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(button)
     }

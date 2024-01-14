@@ -25,12 +25,26 @@ protocol LoadingObservable {
 }
 
 class ErrorViewModel: ObservableObject {
-    @Published var error: AppError?
+    @Published var error: Error? { // AppError?
+        didSet {
+            if let error {
+                ProgressHUD.banner("Error!!!", error.localizedDescription)
+            }
+        }
+    }
     var onRetry: Callback = {}
 }
 
 class LoadingViewModel: ObservableObject {
-    @Published var isLoading: Bool = true
+    @Published var isLoading: Bool = true {
+        didSet {
+            if isLoading {
+                ProgressHUD.animate("Please wait", .activityIndicator, interaction: false)
+            } else {
+                ProgressHUD.dismiss()
+            }
+        }
+    }
 }
 
 class Store<Event, Action>: ErrorObservable, LoadingObservable {
@@ -83,10 +97,10 @@ class Store<Event, Action>: ErrorObservable, LoadingObservable {
             defer { self.loadingViewModel.isLoading = false }
             try await action()
         } catch {
-            self.errorViewModel.error = error as? AppError
+            self.errorViewModel.error = error
             self.errorViewModel.onRetry = {
                 Task {
-                    if let retry = retry {
+                    if let retry {
                         await retry()
                     } else {
                         await self.stateful(action: action)

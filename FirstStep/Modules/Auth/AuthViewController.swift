@@ -67,7 +67,6 @@ extension AuthViewController {
     }
 
     @objc private func actionButtonTapped() {
-        ProgressHUD.animate("Please wait", .activityIndicator, interaction: false)
         let email = emailTextField.text
         let password = passwordTextField.text
         isLogin ? store.sendAction(.signIn(email, password)) : store.sendAction(.createUser(email, password))
@@ -117,7 +116,6 @@ extension AuthViewController {
             .receive(on: DispatchQueue.main)
             .sink {[weak self] event in
                 guard let self else { return }
-                ProgressHUD.dismiss()
                 switch event {
                 case .registered:
                     ProgressHUD.succeed("Создали учетную запись, проверьте почту")
