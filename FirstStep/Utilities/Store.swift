@@ -14,6 +14,7 @@ class AppError: Error {
     var isRetryable: Bool { false }
     var message: String { "Ошибка" }
     var type: AppErrorType { .generic }
+    var imageName: String { "generic" }
 }
 
 protocol ErrorObservable {
@@ -25,26 +26,14 @@ protocol LoadingObservable {
 }
 
 class ErrorViewModel: ObservableObject {
-    @Published var error: Error? { // AppError?
-        didSet {
-            if let error {
-                ProgressHUD.banner("Error!!!", error.localizedDescription)
-            }
-        }
-    }
+    @Published var error: AppError?
     var onRetry: Callback = {}
 }
 
+
+
 class LoadingViewModel: ObservableObject {
-    @Published var isLoading: Bool = true {
-        didSet {
-            if isLoading {
-                ProgressHUD.animate("Please wait", .activityIndicator, interaction: false)
-            } else {
-                ProgressHUD.dismiss()
-            }
-        }
-    }
+    @Published var isLoading: Bool = false
 }
 
 class Store<Event, Action>: ErrorObservable, LoadingObservable {
@@ -97,7 +86,7 @@ class Store<Event, Action>: ErrorObservable, LoadingObservable {
             defer { self.loadingViewModel.isLoading = false }
             try await action()
         } catch {
-            self.errorViewModel.error = error
+            self.errorViewModel.error = AppError()
             self.errorViewModel.onRetry = {
                 Task {
                     if let retry {

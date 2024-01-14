@@ -111,6 +111,9 @@ extension AuthViewController {
     }
 
     private func setupObservers() {
+        bindLoading(to: view, from: store).store(in: &bag)
+        bindError(to: view, from: store).store(in: &bag)
+        
         store
             .events
             .receive(on: DispatchQueue.main)
