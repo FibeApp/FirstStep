@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		026146C12B53CBCB00FDB102 /* DismissableErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026146C02B53CBCB00FDB102 /* DismissableErrorView.swift */; };
 		026DBBE02B4E48AB008EE1A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DBBDF2B4E48AB008EE1A5 /* AppDelegate.swift */; };
 		026DBBE22B4E48AB008EE1A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DBBE12B4E48AB008EE1A5 /* SceneDelegate.swift */; };
 		026DBBE42B4E48AB008EE1A5 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DBBE32B4E48AB008EE1A5 /* AuthViewController.swift */; };
@@ -66,7 +65,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		026146C02B53CBCB00FDB102 /* DismissableErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissableErrorView.swift; sourceTree = "<group>"; };
 		026DBBDC2B4E48AB008EE1A5 /* FirstStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		026DBBDF2B4E48AB008EE1A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		026DBBE12B4E48AB008EE1A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 		026146C22B53CD3300FDB102 /* Error */ = {
 			isa = PBXGroup;
 			children = (
-				026146C02B53CBCB00FDB102 /* DismissableErrorView.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -420,7 +417,6 @@
 				02AB08622B50C72300255CAA /* ProgressHUD+CircleRotateChase.swift in Sources */,
 				02AB085F2B50C72300255CAA /* ProgressHUD+CircleArcDotSpin.swift in Sources */,
 				02AB08692B50C72300255CAA /* ProgressHUD+TriangleDotShift.swift in Sources */,
-				026146C12B53CBCB00FDB102 /* DismissableErrorView.swift in Sources */,
 				02AB086C2B50C72300255CAA /* ProgressHUD+PacmanProgress.swift in Sources */,
 				026DBC122B4E8093008EE1A5 /* Store.swift in Sources */,
 				02AB08702B50C72300255CAA /* ProgressHUD+CirclePulseSingle.swift in Sources */,

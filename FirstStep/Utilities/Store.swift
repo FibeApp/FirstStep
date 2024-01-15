@@ -26,11 +26,9 @@ protocol LoadingObservable {
 }
 
 class ErrorViewModel: ObservableObject {
-    @Published var error: AppError?
+    @Published var error: Error?
     var onRetry: Callback = {}
 }
-
-
 
 class LoadingViewModel: ObservableObject {
     @Published var isLoading: Bool = false
@@ -86,7 +84,7 @@ class Store<Event, Action>: ErrorObservable, LoadingObservable {
             defer { self.loadingViewModel.isLoading = false }
             try await action()
         } catch {
-            self.errorViewModel.error = AppError()
+            self.errorViewModel.error = error
             self.errorViewModel.onRetry = {
                 Task {
                     if let retry {

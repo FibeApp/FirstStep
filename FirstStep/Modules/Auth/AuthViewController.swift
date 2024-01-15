@@ -111,9 +111,21 @@ extension AuthViewController {
     }
 
     private func setupObservers() {
-        bindLoading(to: view, from: store).store(in: &bag)
-        bindError(to: view, from: store).store(in: &bag)
-        
+        store.loadingViewModel.$isLoading
+            .sink { isLoading in
+                if isLoading {
+                    ProgressHUD.animate("Please wait")
+                } else {
+                    ProgressHUD.dismiss()
+                }
+            }.store(in: &bag)
+
+        store.errorViewModel.$error
+            .sink { error in
+                if let error {
+                    ProgressHUD.banner("Error!!!", error.localizedDescription)
+                }
+            }.store(in: &bag)
         store
             .events
             .receive(on: DispatchQueue.main)
