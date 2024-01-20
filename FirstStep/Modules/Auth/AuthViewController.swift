@@ -85,6 +85,10 @@ extension AuthViewController {
         passwordTextField.configure(with: show)
         repeatTextField.configure(with: show)
     }
+
+    @objc private func backgroundTapped() {
+        view.endEditing(false)
+    }
 }
 // MARK: - Setup Veiws
 extension AuthViewController {
@@ -108,6 +112,7 @@ extension AuthViewController {
         signOut()
         updateUI()
         setupObservers()
+        setupBackgroundTap()
     }
 
     private func setupObservers() {
@@ -155,6 +160,14 @@ extension AuthViewController {
             self.middleView.isHidden = !self.isLogin
             self.middleView.alpha = self.isLogin ? 1 : 0
         }
+    }
+
+    func setupBackgroundTap() {
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(backgroundTapped)
+        )
+        view.addGestureRecognizer(tapGesture)
     }
 
     override func setupConstraints() {
